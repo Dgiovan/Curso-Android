@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      switch (view.getId()){
          case R.id.a:
              intent = new Intent(MainActivity.this,actividadB.class);
+             //startActivityForResult(intent, 2)
              /*Bundle args = new Bundle();
              args.putString("h","hola");*/
              intent.putExtra("h","hola");
@@ -57,7 +58,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
              boolean appFound = false;
              List<ResolveInfo> matches = this.getPackageManager().queryIntentActivities(intent, 0);
              for (ResolveInfo info : matches) {
-                 if (info.activityInfo.packageName.toLowerCase(Locale.getDefault()).startsWith("com.facebook.katana")) {
+                 if (info.activityInfo.packageName.toLowerCase(Locale.getDefault()).startsWith("com.twitter.android"
+                        // "com.facebook.katana"
+                 )) {
                      intent.setPackage(info.activityInfo.packageName);
                      appFound = true;
                      break;
@@ -65,8 +68,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
              }
 
              if (!appFound) {
-                 intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/sharer/sharer.php?u=" + cdna));
+                 intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/intent/tweet?url="
+                         //"https://www.facebook.com/sharer/sharer.php?u="
+                                 + cdna));
              }
+
              break;
              case R.id.d:
              intent = new Intent("android.intent.action.actividad");
@@ -84,6 +90,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      if (intent!=null) startActivity(intent);
 
     }
+
+
 
 /**para twiter
  * Constants.KiwilimonUrl + mData.getString("ruta"), "https://twitter.com/intent/tweet?url=", "com.twitter.android");**/
