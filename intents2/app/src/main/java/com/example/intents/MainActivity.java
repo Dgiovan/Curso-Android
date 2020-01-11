@@ -72,7 +72,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
              intent = new Intent("android.intent.action.actividad");
              break;
          case R.id.e:
-             intent = getPackageManager().getLaunchIntentForPackage("com.Dgio.f.funapp123click");
+             intent = getPackageManager().getLaunchIntentForPackage("com.example.layouts");
+             intent.setAction(Intent.ACTION_VIEW);
+             intent.setData(Uri.parse("gio"));
+             intent.putExtra("k","hola");
              break;
          case R.id.f:
              intent = new Intent(Intent.ACTION_SEND);
