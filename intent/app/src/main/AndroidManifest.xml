@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.intents">
+    package="com.example.intent">
 
     <application
         android:allowBackup="true"
@@ -9,21 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Actividadb">
 
-        <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".actividadB">
-            <intent-filter>
-                <action android:name="android.intent.action.actividad" />
+                <action android:name="android.intent.action.B" />
 
                 <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
 
+            </intent-filter>
             <intent-filter android:label="abrirApp">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -31,9 +25,11 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data
                     android:host="content/"
-                    android:scheme="intents" />
+                    android:scheme="intent" />
             </intent-filter>
-            <intent-filter android:label="abrirApp">
+
+
+            <intent-filter android:label="abrir web">
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.DEFAULT" />
@@ -45,16 +41,17 @@
             </intent-filter>
 
 
+
         </activity>
-        <provider
-            android:name="androidx.core.content.FileProvider"
-            android:authorities="${applicationId}.provider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/provider_paths" />
-        </provider>
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+
+        </activity>
     </application>
 
 </manifest>

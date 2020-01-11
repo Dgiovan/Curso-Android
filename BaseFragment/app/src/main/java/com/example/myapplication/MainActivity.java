@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.util.AttributeSet;
@@ -31,8 +32,8 @@ public class MainActivity extends BaseFragment {
          * @param FragmentType el cual esta apuntando a un fragment de nuestro enum
          * @param addbackStack valor booleano para saber si se agrega a la pila de vistas
          * @param args argumentos a pasar a otro fragmen el cual puede ser nulo*/
-
-        changeFragment(FragmentType.LOGING,false,null);
+onNewIntent(getIntent());
+       // changeFragment(FragmentType.LOGING,false,null);
     }
 
     @Override
@@ -40,8 +41,25 @@ public class MainActivity extends BaseFragment {
         super.onStart();
     }
 
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+
+        if (intent==null)return;
+
+        String action = intent.getAction();
+        String data   = intent.getDataString();
+
+        if (Intent.ACTION_VIEW.equals(action) && data!=null ){
+
+            String [] goTo = data.split("/");
+           // https: / /ww.curso.com/ data /tipodefragment /datos
+            String fragment = goTo[4];
 
 
+            changeFragment(fragment.equals("registro")?FragmentType.REGISTRO:FragmentType.LOGING,false,null);
+        }
+    }
 
     @Override
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
