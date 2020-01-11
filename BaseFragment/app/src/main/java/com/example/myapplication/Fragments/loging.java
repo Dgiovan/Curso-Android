@@ -9,11 +9,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.example.myapplication.Enums.FragmentType;
 import com.example.myapplication.R;
 import com.example.myapplication.Utils.Constants;
 import com.example.myapplication.interfaces.OnFragmetIteractionListener;
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -22,7 +24,7 @@ public class loging extends BaseFragmentListener {
 
 private static final String TAG = loging.class.getSimpleName();
 View v;
-Button loging;
+EditText password;
     public loging() {
         // Required empty public constructor
                      }
@@ -38,13 +40,19 @@ Button loging;
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         v= inflater.inflate(R.layout.fragment_loging, container, false);
-        loging = v.findViewById(R.id.btnRegistro);
-        loging.setOnClickListener(new View.OnClickListener() {
+        password = v.findViewById(R.id.ed_password);
+        View bottomshet = v.findViewById(R.id.mybotton);
+        final BottomSheetBehavior behavior = BottomSheetBehavior.from(bottomshet);
+
+        password.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Bundle args = new Bundle();
-                args.putString(Constants.USER,"ximena");
-                onFragmetIteractionListener.onFragmentIteractionChangeFragment(FragmentType.REGISTRO,true,args);
+              /*  if (behavior.getState()== BottomSheetBehavior.STATE_COLLAPSED){
+                    behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                }else {
+                    behavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                }*/
+              ShowMessage("mi titulo","hola que tal","ocultar","cancel");
             }
         });
 

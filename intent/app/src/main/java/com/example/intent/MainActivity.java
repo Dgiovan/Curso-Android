@@ -53,6 +53,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.c:
                 intent = getPackageManager().getLaunchIntentForPackage("com.example.myapplication");
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("hola ximena"));
+                intent.putExtra("k","hola");
                 break;
             case R.id.d:
                 intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:5587026781"));

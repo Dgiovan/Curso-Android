@@ -33,7 +33,8 @@ public class MainActivity extends BaseFragment {
          * @param addbackStack valor booleano para saber si se agrega a la pila de vistas
          * @param args argumentos a pasar a otro fragmen el cual puede ser nulo*/
 onNewIntent(getIntent());
-       // changeFragment(FragmentType.LOGING,false,null);
+
+ changeFragment(FragmentType.LOGING,false,null);
     }
 
     @Override
@@ -49,8 +50,19 @@ onNewIntent(getIntent());
 
         String action = intent.getAction();
         String data   = intent.getDataString();
+        Bundle extras = intent.getExtras();
 
-        if (Intent.ACTION_VIEW.equals(action) && data!=null ){
+        if (action!=null){
+            Log.e("action",action);
+        }
+        if (data != null){
+            Log.e("data",data);
+        }
+        if (extras!=null){
+            Log.e("extras",extras.getString("k"));
+        }
+
+        /*if (Intent.ACTION_VIEW.equals(action) && data!=null ){
 
             String [] goTo = data.split("/");
            // https: / /ww.curso.com/ data /tipodefragment /datos
@@ -58,7 +70,7 @@ onNewIntent(getIntent());
 
 
             changeFragment(fragment.equals("registro")?FragmentType.REGISTRO:FragmentType.LOGING,false,null);
-        }
+        }*/
     }
 
     @Override
