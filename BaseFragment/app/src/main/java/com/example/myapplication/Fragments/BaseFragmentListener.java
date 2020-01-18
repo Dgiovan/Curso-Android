@@ -12,6 +12,8 @@ import androidx.fragment.app.Fragment;
 import com.example.myapplication.Utils.Constants;
 import com.example.myapplication.interfaces.OnFragmetIteractionListener;
 
+import org.json.JSONObject;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -21,6 +23,8 @@ public class BaseFragmentListener extends Fragment {
 * extiende de fragment ya que sera usado principalmente por clases de tipo fragment
 * tambien podremos sobre cargar de diferentes metodos esta clase para unicamente mandarlos a llamar desde cualquier fragment*/
     private AlertDialog alertDialog;
+    protected JSONObject mData;
+
     OnFragmetIteractionListener onFragmetIteractionListener;
 /**los fragments que quieran utilizar esta interfas tendran que extender de BaseFragmentListener para poder hacer uso de esta interfas*/
     public void setOnFragmetIteractionListener(OnFragmetIteractionListener onFragmetIteractionListener){

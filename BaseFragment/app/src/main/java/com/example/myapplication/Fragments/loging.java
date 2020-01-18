@@ -91,8 +91,7 @@ Button    loging;
         if (!emailValidator(user.getText().toString(), Constants.EMAIL)){
             ShowMessage("mi titulo","error","ocultar","cancel",R.drawable.ic_launcher_background);
         }else {
-            ShowMessage("yes","error","ocultar","cancel",R.drawable.ic_launcher_background);
-
+            onFragmetIteractionListener.onFragmentIteractionChangeFragment(FragmentType.REGISTRO,true,null);
         }
     }
 }

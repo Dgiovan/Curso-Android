@@ -11,6 +11,8 @@ import com.example.myapplication.Enums.FragmentType;
 import com.example.myapplication.R;
 import com.example.myapplication.interfaces.OnFragmetIteractionListener;
 
+import org.json.JSONObject;
+
 public class BaseFragment extends AppCompatActivity implements OnFragmetIteractionListener {
 
 
@@ -18,6 +20,7 @@ public class BaseFragment extends AppCompatActivity implements OnFragmetIteracti
      * @param fragmentType
      * @param addTobackStack
      * @param  args*/
+
     protected void changeFragment(FragmentType fragmentType,boolean addTobackStack,@Nullable Bundle args)
     {
         Fragment fragment = new Fragment();
