@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">First Application</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <!--LOGIN FRAGMENT-->
+    <string name="name_login_fragment">Login fragment</string>
+    <string name="goRegisterFragment">Registrarse</string>
+
+    <!--REGISTER FRAGMENT-->
+    <string name="name_register_fragment">Register fragment</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

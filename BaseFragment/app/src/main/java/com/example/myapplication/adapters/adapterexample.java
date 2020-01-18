@@ -116,6 +116,9 @@ public class Card extends Holder implements View.OnClickListener {
     public void setOnItemClickListener(final OnItemClickListener mItemClickListener) {
         this.listener = mItemClickListener;
     }
+
+
+
     public static class itemContent{
 
         JSONObject item;

@@ -1,0 +1,38 @@
+package com.example.firstapplication.Fragments;
+
+
+import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import com.example.firstapplication.Interfaces.OnFragmentIteractionListener;
+import com.example.firstapplication.R;
+
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class ListFragment extends BaseFragmentListener {
+    private static final String TAG = ListFragment.class.getName();
+
+    public ListFragment() {
+        // Required empty public constructor
+    }
+
+    public static ListFragment newInstance(OnFragmentIteractionListener onFragmentIteractionListener){
+        ListFragment fragment = new ListFragment();
+        fragment.setOnFragmentIteractionListener(onFragmentIteractionListener);
+        return fragment;
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_list, container, false);
+    }
+
+}
