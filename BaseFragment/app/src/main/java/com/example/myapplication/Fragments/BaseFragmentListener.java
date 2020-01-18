@@ -1,11 +1,19 @@
 package com.example.myapplication.Fragments;
 
+import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.util.Patterns;
+import android.view.View;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.myapplication.Utils.Constants;
 import com.example.myapplication.interfaces.OnFragmetIteractionListener;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class BaseFragmentListener extends Fragment {
 
@@ -21,12 +29,13 @@ public class BaseFragmentListener extends Fragment {
 
 
 
-    protected void ShowMessage(String title,String message,String okText,String cancelText){
+    protected void ShowMessage(String title,String message,String okText,String cancelText,int icon){
 
         if (alertDialog==null){
             alertDialog = new AlertDialog.Builder(getActivity()).create();
             alertDialog.setTitle(title);
             alertDialog.setMessage(message);
+            alertDialog.setIcon(icon);
             alertDialog.setCancelable(false);
 
             alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, okText, new DialogInterface.OnClickListener() {
@@ -35,6 +44,7 @@ public class BaseFragmentListener extends Fragment {
                     dialog.dismiss();
                 }
             });
+
 
             if (cancelText!=null){
                 alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, cancelText, new DialogInterface.OnClickListener() {
@@ -45,7 +55,25 @@ public class BaseFragmentListener extends Fragment {
                 });
             }
             alertDialog.show();
+        }else {alertDialog.show();}
+    }
+
+    protected boolean emailValidator(String field,int type) {
+
+        Matcher patterns = null;
+        switch (type) {
+            case Constants.EMAIL:
+                patterns = Patterns.EMAIL_ADDRESS.matcher(field);
+                break;
+            case Constants.PHONE:
+                Patterns.PHONE.matcher(field);
+                break;
+/*        final String EMAIL_PATTERN = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+        pattern = Pattern.compile(EMAIL_PATTERN);
+        matcher = pattern.matcher(user);*/
         }
+        return patterns.matches();
+
     }
 
     //private void alertDialogCancelBut
