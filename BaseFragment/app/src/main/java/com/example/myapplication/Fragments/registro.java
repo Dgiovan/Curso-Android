@@ -11,9 +11,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.myapplication.R;
 import com.example.myapplication.Utils.Constants;
 import com.example.myapplication.adapters.AdaptadorGeneral;
@@ -108,6 +111,14 @@ public class registro extends BaseFragmentListener {
         if (a==null){
             a = getActivity().getLayoutInflater().inflate(R.layout.sue, Container, false);
         }
+        ImageView image;
+        image = a.findViewById(R.id.image);
+
+        Glide.with(this)
+                .load("https://http2.mlstatic.com/D_Q_NP_863049-MLM40001568996_122019-AB.webp")
+                .circleCrop()
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .into(image);
         return a;
     }
     /**Empieza metodo para leer desde Json borrar terminando pruebas*/
