@@ -136,4 +136,8 @@ public class Card extends Holder implements View.OnClickListener {
 
 
     }
+
+    /*String sampleText = "This is a test strike";
+textView.setPaintFlags(tv.getPaintFlags()| Paint.STRIKE_THRU_TEXT_FLAG);
+textView.setText(sampleText);*/
 }

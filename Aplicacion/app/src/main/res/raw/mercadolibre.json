@@ -1,0 +1,69 @@
+{
+"payload":[
+
+           {
+             "t":"banner",
+             "name":"Nuestras promociones",
+             "baners":[
+                       {
+                         "image":"https://http2.mlstatic.com/optimize/o:f_webp/resources/deals/exhibitors_resources/mlm-home-desktop-slider-picture-65b72288-f0d8-4923-aa8a-dcc6f993ff93.jpg",
+                         "key"  :"1"
+                       },
+                       {
+                         "image":"https://http2.mlstatic.com/optimize/o:f_webp/resources/deals/exhibitors_resources/mlm-home-desktop-slider-picture-6892385a-250e-4357-ba96-4e21b18b9cf0.jpg",
+                         "key"  :"2"
+                       },
+                       {
+                         "image":"https://http2.mlstatic.com/optimize/o:f_webp/resources/deals/exhibitors_resources/mlm-home-desktop-slider-picture-d92a546d-315b-4de9-a48e-c6a38f48d1f8.jpg",
+                         "key"  :"3"
+                       },
+                       {
+                         "image":"https://http2.mlstatic.com/optimize/o:f_webp/resources/deals/exhibitors_resources/mlm-home-desktop-slider-picture-17758eda-0619-4b76-badf-2380e6c01ba7.jpg",
+                         "key"  :"4"
+                       }
+                      ]
+           },
+           {
+             "t":"product",
+             "title":"Oferta de la semana",
+             "sale":249,
+             "ofert":150,
+             "image":"https://http2.mlstatic.com/D_Q_NP_863049-MLM40001568996_122019-AB.webp"
+           },
+            {
+              "t":"category",
+              "title":"recomendados para ti",
+              "image1":"https://http2.mlstatic.com/D_Q_NP_719947-MLM32584520361_102019-AB.webp",
+              "key1":798,
+              "image2":"https://http2.mlstatic.com/D_Q_NP_730397-MLM32707437445_102019-AB.webp",
+              "key2":765,
+              "image3":"https://http2.mlstatic.com/D_Q_NP_836625-MLM32799609774_112019-AB.webp",
+              "key3":789
+            },{
+               "t":"product",
+               "title":"Visto Recientemente",
+               "sale":249,
+               "ofert":150,
+               "image":"https://http2.mlstatic.com/D_Q_NP_719947-MLM32584520361_102019-AB.webp"
+             },
+              {
+                    "t":"product",
+                    "title":"Oferta de la semana",
+                    "sale":249,
+                    "ofert":150,
+                    "image":"https://http2.mlstatic.com/D_Q_NP_863049-MLM40001568996_122019-AB.webp"
+                  },
+
+                  {
+                      "t":"category",
+                      "title":"recomendados para ti",
+                      "image1":"https://http2.mlstatic.com/D_Q_NP_719947-MLM32584520361_102019-AB.webp",
+                      "key1":798,
+                      "image2":"https://http2.mlstatic.com/D_Q_NP_730397-MLM32707437445_102019-AB.webp",
+                      "key2":765,
+                      "image3":"https://http2.mlstatic.com/D_Q_NP_836625-MLM32799609774_112019-AB.webp",
+                      "key3":789
+                    }
+
+        ]
+}
