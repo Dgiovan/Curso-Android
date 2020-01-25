@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/unoss"
+        android:title="uno"
+        android:icon="@drawable/ic_menu_black_24dp"/>
+    <item android:title="otros">
+        <menu>
+            <item
+                android:id="@+id/doos"
+                android:title="uno"
+                android:icon="@drawable/ic_menu_black_24dp"/>
+        </menu>
+    </item>
+
+</menu>
