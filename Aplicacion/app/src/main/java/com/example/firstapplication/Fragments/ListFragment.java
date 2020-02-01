@@ -12,13 +12,15 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.firstapplication.AdapterGeneral.AdapterofViews;
-import com.example.firstapplication.AdapterGeneral.GlobalAdapter;
+import com.example.firstapplication.Interfaces.ItemOnClickListener;
 import com.example.firstapplication.Interfaces.OnFragmentIteractionListener;
 import com.example.firstapplication.R;
 import com.example.firstapplication.Utils.RecyclerItemTouchHelper;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -60,10 +62,52 @@ AdapterofViews mAdapter;
             rcv.setHasFixedSize(true);
             mAdapter = new AdapterofViews(getActivity(),objet);
             try {
-                ItemTouchHelper.SimpleCallback simpleCallback = new RecyclerItemTouchHelper(0,ItemTouchHelper.LEFT,this);
+                ItemTouchHelper.SimpleCallback simpleCallback = new RecyclerItemTouchHelper(0,ItemTouchHelper.RIGHT,this);
                 new ItemTouchHelper(simpleCallback).attachToRecyclerView(rcv);
             }catch (Exception e){}
 
+           mAdapter.setOnItemClickLister(new ItemOnClickListener() {
+               @Override
+               public void ItemOnclick(View view, int position) {
+                   JSONObject item = mAdapter.mItems.get(position).getItem();
+                   Log.e("QUEHAY",item.toString());
+                   if (item.has("detail"))
+                   {
+                       try {
+                           ShowMessage("detalle de producto",item.getString("detail"),"comprar","ver mas productos",R.drawable.ic_advertencia);
+                       } catch (JSONException e) {
+                         Log.e("que",e.toString());
+                       }
+
+                   }
+
+                   try {
+                       if (item.getString("t").equals("product"))
+                       {
+                           Toast.makeText(getContext(), item.getString("title"), Toast.LENGTH_SHORT).show();
+
+                       }else {
+                           if (item.getString("t").equals("category")){
+                               switch (view.getId())
+                               {
+                                   case R.id.image3 :
+                                       Toast.makeText(getContext(), "clic en esta imagen", Toast.LENGTH_SHORT).show();
+                                       break;
+                                   case R.id.seeMore:
+                                       Toast.makeText(getContext(), "clic en ver mas", Toast.LENGTH_SHORT).show();
+
+                                       break;
+
+                               }
+                           }
+                       }
+                   } catch (JSONException e) {
+                       e.printStackTrace();
+                   }
+
+
+               }
+           });
 
             getActivity().runOnUiThread(new Runnable() {
                 @Override
@@ -111,10 +155,15 @@ AdapterofViews mAdapter;
         return new String(builder);
     }
 
-
     @Override
     public void onSwipe(RecyclerView.ViewHolder viewHolder, int direction, int position) {
 
-        mAdapter.removeItem(viewHolder.getAdapterPosition());
     }
+
+
+    /*@Override
+    public void onSwipe(RecyclerView.ViewHolder viewHolder, int direction, int position) {
+
+        mAdapter.removeItem(viewHolder.getAdapterPosition());
+    }*/
 }

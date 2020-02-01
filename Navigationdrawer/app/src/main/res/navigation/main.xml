@@ -9,7 +9,11 @@
         android:id="@+id/unoss"
         android:name="com.example.navigationdrawer.unoo"
         android:label="unooooo"
-        tools:layout="@layout/fragment_unoo" />
+        tools:layout="@layout/fragment_unoo" >
+        <action
+            android:id="@+id/action_unoss_to_doos"
+            app:destination="@id/doos" />
+    </fragment>
     <fragment
         android:id="@+id/doos"
         android:name="com.example.navigationdrawer.dos"
