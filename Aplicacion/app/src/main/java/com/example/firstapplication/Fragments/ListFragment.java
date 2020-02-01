@@ -4,6 +4,7 @@ package com.example.firstapplication.Fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -11,11 +12,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 
 import com.example.firstapplication.AdapterGeneral.AdapterofViews;
+import com.example.firstapplication.AdapterGeneral.GlobalAdapter;
 import com.example.firstapplication.Interfaces.OnFragmentIteractionListener;
 import com.example.firstapplication.R;
+import com.example.firstapplication.Utils.RecyclerItemTouchHelper;
 
 import org.json.JSONObject;
 
@@ -27,7 +29,7 @@ import java.io.InputStreamReader;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ListFragment extends BaseFragmentListener {
+public class ListFragment extends BaseFragmentListener implements RecyclerItemTouchHelper.RecyclerItemTouchHelperListener {
     private static final String TAG = ListFragment.class.getName();
 View view;
 RecyclerView rcv;
@@ -57,6 +59,11 @@ AdapterofViews mAdapter;
             rcv.setLayoutManager(linearLayoutManager);
             rcv.setHasFixedSize(true);
             mAdapter = new AdapterofViews(getActivity(),objet);
+            try {
+                ItemTouchHelper.SimpleCallback simpleCallback = new RecyclerItemTouchHelper(0,ItemTouchHelper.LEFT,this);
+                new ItemTouchHelper(simpleCallback).attachToRecyclerView(rcv);
+            }catch (Exception e){}
+
 
             getActivity().runOnUiThread(new Runnable() {
                 @Override
@@ -64,6 +71,10 @@ AdapterofViews mAdapter;
                     rcv.setAdapter(mAdapter);
                 }
             });
+
+
+
+
 
         }catch (Exception e){ }
 
@@ -101,4 +112,9 @@ AdapterofViews mAdapter;
     }
 
 
+    @Override
+    public void onSwipe(RecyclerView.ViewHolder viewHolder, int direction, int position) {
+
+        mAdapter.removeItem(viewHolder.getAdapterPosition());
+    }
 }

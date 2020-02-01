@@ -46,7 +46,8 @@ public class FragmentMainActivity extends BaseFragment {
             Log.e("data" , data);
         }
         if(extras != null){
-            Log.e("extras" , extras.getString("k"));
+
+            //Log.e("extras" , extras.getString("k"));
         }
 
         /*if(Intent.ACTION_VIEW.equals(action) && data != null){

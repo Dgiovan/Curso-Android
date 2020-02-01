@@ -1,13 +1,12 @@
 package com.example.firstapplication.AdapterGeneral;
 
 import android.app.Activity;
-import android.content.Context;
 import android.graphics.Paint;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -28,6 +27,7 @@ public class GlobalAdapter extends RecyclerView.Adapter<GlobalAdapter.Holder> {
     public static final int
     VIEW_TYPE_PRODUCT=0x01,
     VIEW_TYPE_CATEGORY=0x02;
+
 
     Activity context;
     public ArrayList<SuperPojo> mItems = new ArrayList<SuperPojo>();
@@ -61,6 +61,7 @@ public class GlobalAdapter extends RecyclerView.Adapter<GlobalAdapter.Holder> {
         TextView title, description1,precio1, description2,precio2, description3,precio3,vermas;
         ImageView one,dos,tres;
         ConstraintLayout uno,two,three;
+        public LinearLayout cat;
         public Categorys(@NonNull View v) {
             super(v);
             title        = v.findViewById(R.id.title);
@@ -75,6 +76,7 @@ public class GlobalAdapter extends RecyclerView.Adapter<GlobalAdapter.Holder> {
             precio3      = v.findViewById(R.id.price3);
             tres         = v.findViewById(R.id.image3);
             vermas       = v.findViewById(R.id.seeMore);
+            cat = v.findViewById(R.id.category);
 
         }
         public void onbinCategorys(JSONObject object)
@@ -107,12 +109,15 @@ public class GlobalAdapter extends RecyclerView.Adapter<GlobalAdapter.Holder> {
     public class Product extends Holder{
         TextView mtitle,sale,oferta;
         ImageView mimage;
+        public LinearLayout idlinear;
         public Product(@NonNull View v) {
             super(v);
             mtitle=  v.findViewById(R.id.title);
             mimage =  v.findViewById(R.id.image);
             sale  =  v.findViewById(R.id.sale) ;
             oferta=  v.findViewById(R.id.ofert);
+            idlinear = v.findViewById(R.id.linear);
+
         }
 
     public void onBinProduct(String title,String image,double price,double ofert)
@@ -131,6 +136,7 @@ public class GlobalAdapter extends RecyclerView.Adapter<GlobalAdapter.Holder> {
 
     }
 
+
     }
 
     public class Holder extends RecyclerView.ViewHolder {
@@ -141,6 +147,11 @@ public class GlobalAdapter extends RecyclerView.Adapter<GlobalAdapter.Holder> {
         }
     }
 
+    public void removeItem(int position)
+    {
+        notifyItemRemoved(position);
+        notifyDataSetChanged();
+    }
     public static class SuperPojo{
 
         JSONObject item;

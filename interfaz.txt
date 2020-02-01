@@ -1,0 +1,45 @@
+crear interfaz
+1)
+public interface onClicItemListener {
+     void onItemClick(View view, int position);
+}
+en Global adapter
+declarar 
+    public onClicItemListener listener;
+
+hacer metodo onclick
+   public void setOnItemListener(onClicItemListener onItemListener){
+        this.listener = onItemListener;
+    }
+
+una ves que se extienda el onclic en los onbin
+  
+@Override
+        public void onClick(View view) {
+            if (listener != null){
+             listener.onItemClick(view,getAdapterPosition());
+            }
+        }
+
+no olvidar 
+     v.setOnClickListener(this);
+            mimage.setOnClickListener(this);
+
+en la clase del adaptador
+
+    mAdapter.setOnItemListener(new onClicItemListener() {
+                @Override
+                public void onItemClick(View view, int position) {
+                    JSONObject item = mAdapter.mItems.get(position).getItem();
+                    try {
+                        Log.e("item",item.toString());
+                    }catch (Exception e){}
+
+                    switch (view.getId()){
+                        case R.id.image:
+                            Toast.makeText(getContext(), "image", Toast.LENGTH_SHORT).show();
+                            break;
+                    }
+
+                }
+            });
