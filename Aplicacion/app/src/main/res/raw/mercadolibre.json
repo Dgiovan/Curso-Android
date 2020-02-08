@@ -44,7 +44,8 @@
                "title":"Visto Recientemente",
                "sale":249,
                "ofert":150,
-               "image":"https://http2.mlstatic.com/D_Q_NP_719947-MLM32584520361_102019-AB.webp"
+               "image":"https://http2.mlstatic.com/D_Q_NP_719947-MLM32584520361_102019-AB.webp",
+               "detail": "Descripción\nChromecast Charcoal 3a Generación 2018\nTransmite desde su dispositivo a su televisor. Así de simple.\n\nTransmisión desde Android y iPhone.\nDisfrute de miles de aplicaciones de Android o iPhone, y juegue o haga una pausa directamente desde su teléfono.\n\nVea su computadora portátil en su televisor.\n\nDuplique la pantalla de su computadora portátil a su televisor con su navegador Chrome. Navegue por la web o vea su contenido en la pantalla grande.\n\nControla tu TV desde tu tableta.\n\nConvierta su tableta Android o iOS en un centro de entretenimiento aún mejor. Simplemente presiona el botón Cast en cualquier aplicación compatible.\n\nContenido de la caja:\nChromecast 3rd Generation Network Audio/Video Player\nAdaptador de corriente\nCable de corriente"
              },
               {
                     "t":"product",
@@ -62,8 +63,10 @@
                       "image2":"https://http2.mlstatic.com/D_Q_NP_730397-MLM32707437445_102019-AB.webp",
                       "key2":765,
                       "image3":"https://http2.mlstatic.com/D_Q_NP_836625-MLM32799609774_112019-AB.webp",
-                      "key3":789
-                    }
+                      "key3":789,
+                      "detail": "Descripción\nChromecast Charcoal 3a Generación 2018\nTransmite desde su dispositivo a su televisor. Así de simple.\n\nTransmisión desde Android y iPhone.\nDisfrute de miles de aplicaciones de Android o iPhone, y juegue o haga una pausa directamente desde su teléfono.\n\nVea su computadora portátil en su televisor.\n\nDuplique la pantalla de su computadora portátil a su televisor con su navegador Chrome. Navegue por la web o vea su contenido en la pantalla grande.\n\nControla tu TV desde tu tableta.\n\nConvierta su tableta Android o iOS en un centro de entretenimiento aún mejor. Simplemente presiona el botón Cast en cualquier aplicación compatible.\n\nContenido de la caja:\nChromecast 3rd Generation Network Audio/Video Player\nAdaptador de corriente\nCable de corriente"
+
+                  }
 
         ]
 }

@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.example.firstapplication.Interfaces.ItemOnClickListener;
 import com.example.firstapplication.R;
 
 import org.json.JSONObject;
@@ -28,6 +29,7 @@ public class GlobalAdapter extends RecyclerView.Adapter<GlobalAdapter.Holder> {
     VIEW_TYPE_PRODUCT=0x01,
     VIEW_TYPE_CATEGORY=0x02;
 
+    public ItemOnClickListener listener;
 
     Activity context;
     public ArrayList<SuperPojo> mItems = new ArrayList<SuperPojo>();
@@ -57,7 +59,8 @@ public class GlobalAdapter extends RecyclerView.Adapter<GlobalAdapter.Holder> {
         return mItems.size();
     }
 
-    public  class Categorys extends Holder {
+    public  class Categorys extends Holder implements View.OnClickListener
+    {
         TextView title, description1,precio1, description2,precio2, description3,precio3,vermas;
         ImageView one,dos,tres;
         ConstraintLayout uno,two,three;
@@ -78,6 +81,9 @@ public class GlobalAdapter extends RecyclerView.Adapter<GlobalAdapter.Holder> {
             vermas       = v.findViewById(R.id.seeMore);
             cat = v.findViewById(R.id.category);
 
+            vermas.setOnClickListener(this);
+            v.setOnClickListener(this);
+            tres.setOnClickListener(this);
         }
         public void onbinCategorys(JSONObject object)
         {
@@ -104,20 +110,27 @@ public class GlobalAdapter extends RecyclerView.Adapter<GlobalAdapter.Holder> {
             }catch (Exception e){
                 Log.e("Catch",e.toString());}
         }
+
+        @Override
+        public void onClick(View v) {
+            if (listener != null){
+                listener.ItemOnclick(v,getAdapterPosition());
+            }
+        }
     }
 
-    public class Product extends Holder{
+    public class Product extends Holder implements View.OnClickListener{
         TextView mtitle,sale,oferta;
         ImageView mimage;
-        public LinearLayout idlinear;
+        public LinearLayout linear;
         public Product(@NonNull View v) {
             super(v);
-            mtitle=  v.findViewById(R.id.title);
+            mtitle =  v.findViewById(R.id.title);
             mimage =  v.findViewById(R.id.image);
-            sale  =  v.findViewById(R.id.sale) ;
-            oferta=  v.findViewById(R.id.ofert);
-            idlinear = v.findViewById(R.id.linear);
-
+            sale   =  v.findViewById(R.id.sale) ;
+            oferta =  v.findViewById(R.id.ofert);
+            linear =  v.findViewById(R.id.onswipe);
+            v.setOnClickListener(this);
         }
 
     public void onBinProduct(String title,String image,double price,double ofert)
@@ -132,11 +145,22 @@ public class GlobalAdapter extends RecyclerView.Adapter<GlobalAdapter.Holder> {
         Glide.with(context)
                 .load(image)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .circleCrop()
                 .into(mimage);
 
     }
 
 
+        @Override
+        public void onClick(View v) {
+            if (listener != null){
+                listener.ItemOnclick(v,getAdapterPosition());
+            }
+        }
+    }
+
+    public void setOnItemClickLister(ItemOnClickListener itemlistener){
+        this.listener = itemlistener;
     }
 
     public class Holder extends RecyclerView.ViewHolder {
