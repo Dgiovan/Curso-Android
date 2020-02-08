@@ -3,17 +3,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cardview_dark_background"
-    tools:context=".fragmentb">
+    android:background="@color/cardview_shadow_end_color"
+    tools:context=".Fragment2">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:textSize="20sp"
         android:text="@string/hello_blank_fragment" />
     <Button
-        android:id="@+id/fb"
+        android:id="@+id/f2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="go"/>
+        android:text="ir"
+        />
+
 </FrameLayout>

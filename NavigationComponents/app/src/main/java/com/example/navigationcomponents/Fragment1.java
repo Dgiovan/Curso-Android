@@ -7,43 +7,43 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class fragmenttc extends Fragment {
+public class Fragment1 extends Fragment {
 
-
-    public fragmenttc() {
+    Button btn;
+    View v;
+    TextView nombre;
+    Fragment1Args name;
+    public Fragment1() {
         // Required empty public constructor
     }
-
-View v;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        fragmenttcArgs  nombre = fragmenttcArgs.fromBundle(getArguments());
-        Log.e("Valores Recibidos",nombre.getName());
+          name = Fragment1Args.fromBundle(getArguments());
+
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        v= inflater.inflate(R.layout.fragment_fragmenttc, container, false);
-        v.findViewById(R.id.fc).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Navigation.createNavigateOnClickListener(R.id.navigationNext);
+        v= inflater.inflate(R.layout.fragment_fragment1, container, false);
+        btn = v.findViewById(R.id.f1);
+        nombre = v.findViewById(R.id.name);
+        nombre.setText(name.getNombre());
 
-            }
-        });
+        btn.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.nextNavigation));
         return v;
     }
 

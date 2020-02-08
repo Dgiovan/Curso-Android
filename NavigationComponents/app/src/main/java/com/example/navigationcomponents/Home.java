@@ -4,6 +4,7 @@ package com.example.navigationcomponents;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
@@ -15,27 +16,27 @@ import android.widget.Button;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Fragmenta extends Fragment {
+public class Home extends Fragment {
+View v;
+Button btn;
 
-
-    public Fragmenta() {
+    public Home() {
         // Required empty public constructor
     }
-    View v;
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        v = inflater.inflate(R.layout.fragment_fragmenta, container, false);
-        Button btn = v.findViewById(R.id.fa);
-     //   btn.setOnClickListener( Navigation.createNavigateOnClickListener(R.id.navigationNext));
+        v= inflater.inflate(R.layout.fragment_home, container, false);
+        btn = v.findViewById(R.id.fh);
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-               // Navigation.findNavController(v).popBackStack();
-                Navigation.findNavController(v).navigate(R.id.navigationNext);
-
+            public void onClick(View v) {
+                NavDirections action = HomeDirections.nextNavigation().setNombre("hola Christian");
+                Navigation.findNavController(v).navigate(action);
+               // Navigation.findNavController(v).navigate(R.id.nextNavigation);
             }
         });
         return v;

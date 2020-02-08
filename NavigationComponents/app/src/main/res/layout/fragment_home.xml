@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
-    tools:context=".Fragmenta">
+    android:background="@drawable/ic_launcher_background"
+    tools:context=".Home">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
@@ -12,9 +12,9 @@
         android:layout_height="match_parent"
         android:text="@string/hello_blank_fragment" />
 <Button
-    android:id="@+id/fa"
+    android:id="@+id/fh"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="go"/>
-
+    android:text="ir"
+    />
 </FrameLayout>

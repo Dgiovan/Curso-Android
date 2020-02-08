@@ -8,12 +8,12 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
-
 
     DrawerLayout drawerLayout;
     NavController navController;
@@ -23,8 +23,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         drawerLayout = findViewById(R.id.drawerLayout);
-
-        findViewById(R.id.imageMenu).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.imagemenu).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 drawerLayout.openDrawer(GravityCompat.START);
@@ -34,5 +33,6 @@ public class MainActivity extends AppCompatActivity {
         NavigationView navigationView = findViewById(R.id.navigationView);
         navController = Navigation.findNavController(this,R.id.navHostFragment);
         NavigationUI.setupWithNavController(navigationView,navController);
+
     }
 }

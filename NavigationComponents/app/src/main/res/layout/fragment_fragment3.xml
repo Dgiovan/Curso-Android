@@ -2,9 +2,9 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/colorAccent"
     android:layout_height="match_parent"
-    tools:context=".fragmenttc">
+    android:background="@color/colorAccent"
+    tools:context=".Fragment3">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
@@ -12,8 +12,10 @@
         android:layout_height="match_parent"
         android:text="@string/hello_blank_fragment" />
     <Button
-        android:id="@+id/fc"
+        android:id="@+id/f3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="go"/>
+        android:text="ir"
+        />
+
 </FrameLayout>

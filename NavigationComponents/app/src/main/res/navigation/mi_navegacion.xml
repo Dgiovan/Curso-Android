@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mi_navegacion"
+    app:startDestination="@id/home2">
+
+    <fragment
+        android:id="@+id/home2"
+        android:name="com.example.navigationcomponents.Home"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/nextNavigation"
+            app:destination="@id/fragment1" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment1"
+        android:name="com.example.navigationcomponents.Fragment1"
+        android:label="fragment_fragment1"
+        tools:layout="@layout/fragment_fragment1" >
+        <action
+            android:id="@+id/nextNavigation"
+            app:destination="@id/fragment2"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_exit_anim" />
+        <argument
+            android:name="nombre"
+            app:argType="string"
+            android:defaultValue="no hay nombre" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment2"
+        android:name="com.example.navigationcomponents.Fragment2"
+        android:label="fragment_fragment2"
+        tools:layout="@layout/fragment_fragment2" >
+        <action
+            android:id="@+id/nextNavigation"
+            app:destination="@id/fragment3"
+            app:popUpTo="@+id/mi_navegacion" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment3"
+        android:name="com.example.navigationcomponents.Fragment3"
+        android:label="fragment_fragment3"
+        tools:layout="@layout/fragment_fragment3" >
+        <action
+            android:id="@+id/nextNavigation"
+            app:destination="@id/fragment4" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment4"
+        android:name="com.example.navigationcomponents.Fragment4"
+        android:label="fragment_fragment4"
+        tools:layout="@layout/fragment_fragment4" >
+        <action
+            android:id="@+id/nextNavigation"
+            app:destination="@id/fragment5" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment5"
+        android:name="com.example.navigationcomponents.Fragment5"
+        android:label="fragment_fragment5"
+        tools:layout="@layout/fragment_fragment5" >
+        <action
+            android:id="@+id/nextNavigation"
+            app:destination="@+id/home2" />
+    </fragment>
+</navigation>
