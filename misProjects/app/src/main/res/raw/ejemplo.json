@@ -1,0 +1,74 @@
+{
+	"body":[
+	{
+	"t":"playlist",
+	"titulo":"mi lista personalizada",
+	"default":"",
+	"description":"crada el mes pasado"
+
+	}
+	,
+	{
+	"t":"genero",
+	"title":"Rock",
+	"color":"primero"
+	
+	},
+	{
+	"t":"banner",
+	"idpublisher":"",
+	"color":"segundo"
+	},
+	{
+	"t":"genero",
+	"title":"Rock",
+	"color":"segundo"
+	},
+	{
+	"idpublisher":"",
+	"color":"primero"
+	},
+	{
+	"t":"playlist",
+	"titulo":"Canciones para esperar en el IMMS",
+	"default":"",
+	"description":"Muriendo lento ,Voy desvelado..."
+
+	},{
+	"t":"playlist",
+	"titulo":"mi lista personalizada",
+	"default":"",
+	"description":"crada el mes pasado"
+
+	}
+	,
+	{
+	"t":"genero",
+	"title":"Rock",
+	"color":"primero"
+	
+	},
+	{
+	"idpublisher":"",
+	"color":"segundo"
+	},
+	{
+	"t":"genero",
+	"title":"Rock",
+	"color":"segundo"
+	},
+	{
+	"t":"banner",
+	"color":"primero"
+	},
+	{
+	"t":"playlist",
+	"titulo":"Canciones para esperar en el IMMS",
+	"default":"",
+	"description":"Muriendo lento ,Voy desvelado..."
+
+	}
+
+
+	]
+}

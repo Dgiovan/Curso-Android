@@ -124,12 +124,7 @@ public class registro extends BaseFragmentListener {
     /**Empieza metodo para leer desde Json borrar terminando pruebas*/
     private String readJsonDataFromFile() throws IOException
     {
-        /**       InputStream inputStream = null;
-         StringBuilder builder = new StringBuilder();
 
-         String jsonDataString = null;
-         inputStream = getResource()*/
-        //BufferedReader
         Log.e("ENTRE","si");
         InputStream inputStream = null;
         StringBuilder builder = new StringBuilder();
