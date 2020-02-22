@@ -32,7 +32,6 @@ protected void onCreate(Bundle savedInstanceState) {
     //https://gr.kiwilimon.com/v6/recipeclassification?key=48&full=yes&language=es&device=android&human=1
 
 
-    feedKiwi feeds = new feedKiwi("48","yes","es","android");
     AuthApiService authApiService = RetrofitClient.sharedInstance().getAuthApiService();
     final Call<aaa> feed = authApiService.Feeds(48,"yes","es","android",1);
 

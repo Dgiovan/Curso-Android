@@ -33,6 +33,7 @@
                     android:host="content/"
                     android:scheme="intents" />
             </intent-filter>
+
             <intent-filter android:label="abrirApp">
                 <action android:name="android.intent.action.VIEW" />
 
