@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#D5E7FB</color>
+    <color name="colorPrimaryDark">#5587BA</color>
+    <color name="colorAccent">#B85811</color>
+
+
+    //palet of color orange
+    <color name="colorGreen">#7F9E7F</color>
+    <color name="colorBlue">#5587BA</color>
+    <color name="colorBlueLigth">#D5E7FB</color>
+    <color name="colorOrangeLigth">#F0AE36</color>
+    <color name="colorOrange">#B85811</color>
+
+    <color name="colorBlack">#000000</color>
+</resources>

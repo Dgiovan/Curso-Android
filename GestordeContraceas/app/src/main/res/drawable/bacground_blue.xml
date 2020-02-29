@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <gradient android:type="sweep"
+        android:startColor="@color/colorBlueLigth"
+        android:endColor="@color/colorBlueLigth"
+        android:centerColor="@color/colorBlue"
+        android:gradientRadius="@dimen/cardview_default_radius"
+        android:angle="@integer/config_navAnimTime"
+        />
+    
+
+</shape>

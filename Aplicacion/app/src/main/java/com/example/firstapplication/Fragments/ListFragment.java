@@ -66,7 +66,7 @@ AdapterofViews mAdapter;
                 new ItemTouchHelper(simpleCallback).attachToRecyclerView(rcv);
             }catch (Exception e){}
 
-           mAdapter.setOnItemClickLister(new ItemOnClickListener() {
+           mAdapter.setOnIItemClickLister(new ItemOnClickListener() {
                @Override
                public void ItemOnclick(View view, int position) {
                    JSONObject item = mAdapter.mItems.get(position).getItem();
