@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name" translatable="false">SharedPreferences0</string>
+
+    <string name="userhint">Usuario</string>
+    <string name="hintpasword">Contraseña</string>
+
+    <string name="buttontexr">Siguiente</string>
+    <string name="messageError">Ningun campo debe estar vacio</string>
+</resources>

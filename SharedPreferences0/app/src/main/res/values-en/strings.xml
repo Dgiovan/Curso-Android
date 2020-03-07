@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="userhint">User</string>
+    <string name="hintpasword"> password</string>
+
+    <string name="buttontexr">Next</string>
+    <string name="messageError">Don´t have fields emptys</string>
+</resources>
