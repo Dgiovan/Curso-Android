@@ -42,7 +42,7 @@ Animation animation;
             @Override
             public void run() {
 
-                Navigation.findNavController(view).a
+                Navigation.findNavController(view).navigate(R.id.action_splashscreen_to_registry);
             }
         },TIMERSPLASH);
         return view;

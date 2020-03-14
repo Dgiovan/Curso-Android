@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="loading">载入中 ...</string>
+
+
+    <!--Texts Hints-->
+    <string name="userHint">用户</string>
+    <string name="paswHint">密码</string>
+    <!--Text Buttons-->
+    <string name="buttonSignup">注册</string>
+
+    <!--Text Actions-->
+    <string name="actionRegistry">注册</string>
+</resources>

@@ -1,5 +1,15 @@
 <resources>
-    <string name="app_name">Gestor de Contraceñas</string>
-
+    <string name="app_name" translatable="false">Gestor de Contraceñas</string>
+    <string name="emptyText" translatable="false"></string>
     <string name="loading">Cargando ...</string>
+
+    <!--Texts Hints-->
+    <string name="userHint">Usuario</string>
+    <string name="paswHint">Contraseña</string>
+   <!--Text Buttons-->
+    <string name="buttonSignup">Iniciar sesion</string>
+
+    <!--Text Actions-->
+    <string name="actionRegistry">Registrarme</string>
+
 </resources>

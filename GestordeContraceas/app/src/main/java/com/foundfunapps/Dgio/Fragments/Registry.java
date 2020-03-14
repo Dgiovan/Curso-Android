@@ -10,12 +10,15 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.foundfunapps.Dgio.R;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class Registry extends Fragment {
-
+View view;
 
     public Registry() {
         // Required empty public constructor
@@ -25,8 +28,15 @@ public class Registry extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        view = inflater.inflate(R.layout.fragment_registry, container, false);
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_registry, container, false);
+
+        AdView adView = view.findViewById(R.id.banner);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
+
+        return view;
+
     }
 
 }
