@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -17,8 +18,11 @@ import com.example.retrofit.Models.pokemon;
 import com.example.retrofit.Utils.RetrofitClient;
 import com.example.retrofit.adapters.pokemonAdapter;
 
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -59,18 +63,19 @@ public class Main2 extends AppCompatActivity {
            }
        });*/
         servicios pokemo = RetrofitClient.sharedInstance().getServicios();
-        final Call<List_pokemons> pokemons = pokemo.getListPokemons(50,50);
+        final Call<Response> pokemons = pokemo.getListPokemons(50,50);
 
-        pokemons.enqueue(new Callback<List_pokemons>() {
+        pokemons.enqueue(new Callback<Response>() {
             @Override
-            public void onResponse(Call<List_pokemons> call, Response<List_pokemons> response) {
+            public void onResponse(Call<Response> call, Response<Response> response) {
                 if (response.isSuccessful()){
-                    List_pokemons pokemons = response.body();
-                    ArrayList<pokemon> listapoken = pokemons.getResults();
+                    JSONObject onjet= (JSONObject) JSONObject.wrap(response);
+                   // List_pokemons pokemons = response.body();
+                    //ArrayList<pokemon> listapoken = pokemons.getResults();
 
-                    madapter.addListPokemon(listapoken);
+                    //madapter.addListPokemon(listapoken);
 
-                    rcv.setAdapter(madapter);
+                    //rcv.setAdapter(madapter);
                 }else {
                     Toast.makeText(Main2.this, response.errorBody().toString(), Toast.LENGTH_SHORT).show();
                 }
@@ -78,7 +83,7 @@ public class Main2 extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<List_pokemons> call, Throwable t) {
+            public void onFailure(Call<Response> call, Throwable t) {
 
             }
         });

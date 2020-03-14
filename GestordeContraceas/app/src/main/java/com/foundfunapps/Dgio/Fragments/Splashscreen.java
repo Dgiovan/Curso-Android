@@ -5,7 +5,10 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavDirections;
+import androidx.navigation.Navigation;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,8 +17,10 @@ import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
 
 import com.foundfunapps.Dgio.R;
+import com.google.android.material.navigation.NavigationView;
 
 public class Splashscreen extends Fragment {
+    public static final long TIMERSPLASH = 2500;
 
 
     public Splashscreen() {
@@ -32,6 +37,14 @@ Animation animation;
         banner = view.findViewById(R.id.presentation);
         animation= AnimationUtils.loadAnimation(getContext(),R.anim.blink);
         banner.startAnimation(animation);
+        android.os.Handler task= new Handler();
+        task.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+                Navigation.findNavController(view).a
+            }
+        },TIMERSPLASH);
         return view;
     }
 
